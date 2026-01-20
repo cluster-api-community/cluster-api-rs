@@ -1,5 +1,5 @@
-YQ_VERSION := "v4.43.1"
-UPDATECLI_VERSION := "v0.82.0"
+YQ_VERSION := "v4.50.1"
+UPDATECLI_VERSION := "v0.112.0"
 OUT_DIR := "_out"
 ARCH := if arch() == "aarch64" { "arm64"} else { "amd64" }
 GO_ARCH := if arch() == "aarch64" { "arm64"} else { "x86_64" }
