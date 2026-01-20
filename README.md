@@ -9,7 +9,7 @@ Library can be used as a dependency:
 1. Add it to your `Cargo.toml`:
 ```toml
 [dependencies]
-cluster-api-rs = "1.8.5"
+cluster-api-rs = "1.11.4"
 ```
 
 ## Features
