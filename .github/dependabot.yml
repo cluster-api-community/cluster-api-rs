@@ -23,4 +23,5 @@ updates:
         patterns:
           - "kube*"
           - "k8s-openapi"
-          - "http*"
+          - "serde*"
+          - "schemars"
