@@ -33,7 +33,7 @@ jobs:
         uses: updatecli/updatecli-action@v2
 
       - name: Install just
-        uses: extractions/setup-just@v3
+        uses: extractions/setup-just@v4
 
       - name: Update changes
         id: update
