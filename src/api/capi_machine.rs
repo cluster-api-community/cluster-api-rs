@@ -275,7 +275,7 @@ pub struct MachineStatus {
     /// NodeHealthy, Updating, Deleting, Paused.
     /// If a MachineHealthCheck is targeting this machine, also HealthCheckSucceeded, OwnerRemediated conditions are added.
     /// Additionally control plane Machines controlled by KubeadmControlPlane will have following additional conditions:
-    /// APIServerPodHealthy, ControllerManagerPodHealthy, SchedulerPodHealthy, EtcdPodHealthy, EtcdMemberHealthy.
+    /// APIServerPodHealthy, ControllerManagerPodHealthy, SchedulerPodHealthy, EtcdPodHealthy, EtcdMemberHealthy, NodeKubeadmLabelsAndTaintsSet.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub conditions: Option<Vec<Condition>>,
     /// deletion contains information relating to removal of the Machine.
@@ -285,6 +285,13 @@ pub struct MachineStatus {
     /// deprecated groups all the status fields that are deprecated and will be removed when all the nested field are removed.
     #[serde(default, skip_serializing_if = "Option::is_none")]
     pub deprecated: Option<MachineStatusDeprecated>,
+    /// failureDomain is the failure domain where the Machine has been scheduled.
+    #[serde(
+        default,
+        skip_serializing_if = "Option::is_none",
+        rename = "failureDomain"
+    )]
+    pub failure_domain: Option<String>,
     /// initialization provides observations of the Machine initialization process.
     /// NOTE: Fields in this struct are part of the Cluster API contract and are used to orchestrate initial Machine provisioning.
     #[serde(default, skip_serializing_if = "Option::is_none")]
